@@ -9,12 +9,13 @@ namespace CSharp
             foreach (var (x, y) in Lib.Foo.Bar()) { }
         }
 
-        static ValueTuple<Type, Type>[] HelloSameAssembly()
+        static ValueTuple<Type, Type>[] BarSameAssembly()
             => new[] { (typeof(int), typeof(int)) };
 
         static void Success()
         {
-            foreach (var (x, y) in HelloSameAssembly()) { }
+            foreach (var (x, y) in BarSameAssembly()) { }
+            foreach (var (x, y) in Lib.Foo.BarProp) { }
             foreach (var (x, y) in Lib.Foo.WorkingBar()) { }
         }
 
